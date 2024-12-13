@@ -29,8 +29,8 @@ export default function Form({ setCardInfo, setSubmitted }: FormProps) {
     console.log(error);
   }
 
-  function formatCreditCard(event) {
-    const input = event.target;
+  function formatCreditCard(event: React.KeyboardEvent<HTMLInputElement>) {
+    const input = event.target as HTMLInputElement;
     let value = input.value.replace(/\D/g, ""); // Remove non-numeric characters
     value = value.replace(/(.{4})/g, "$1 ").trim(); // Add space every 4 digits
     input.value = value;
